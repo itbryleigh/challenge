@@ -69,13 +69,15 @@ user_data = (
 # If you need to see userdata
 # print(user_data)
 
-def list_of_people(location):
+def list_of_people(key,value):
     list_to_return = []
     #for each record in user_data
-    for user in user_data.items():
-        #   check if location matches passed parameter
-        if user[1]['location'] == location:
+    for key, value in user_data.items():
+       # check if key and value match
+        if key[1]['location'] == key and value[1]['us'] == value:
+            list_to_return.append(user[1]['uid'])
+        elif key[1]['firstname'] == key and value[1]['Joe'] == value:
             list_to_return.append(user[1]['uid'])
     #   return "uid"
     return list_to_return
-print(list_of_people("US"))
+print(list_of_people("location","US"))
